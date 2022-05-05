@@ -3,6 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <title>Simple Weather App</title>
+        <!--This css was taken from a tutorial from tutsplus-->
         <link rel="stylesheet" href="WeatherApp.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="WeatherApp.js"></script>
@@ -13,14 +14,15 @@
             <div class="container">
               <h1 class="heading">Simple Weather App</h1>
               <form>
-                <input id="city" type="text" placeholder="Search for a city" autofocus>
+                <input id="city" type="text" placeholder="Search for a city,Country Code" autofocus>
                 <button type="button" id="search">Search</button>
+                <button type="button" id="userLocation">Use current location</button>
                 <span class="msg"></span>
               </form>
             </div>
           </section>
 
-          <button type="button" id="userLocation">Use current location</button>
+          
           <section class="ajax-section">
             <div id="forecast">
               <ul class="cities">
