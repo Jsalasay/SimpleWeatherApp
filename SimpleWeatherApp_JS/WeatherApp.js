@@ -38,8 +38,10 @@ $( document ).ready(function() {
          li.innerHTML = markup;
          $(".cities").append(li);
          }).fail(function(jqXHR){
-            $("forecast").html("There was a problem contacting the server: " + jqXHR.status + " " + jqXHR.responseText);
+            $(".msg").html("There was a problem contacting the server: " + jqXHR.status + " " + jqXHR.responseText);
          });
+         $(".msg").html("");
+
       });
    });
    
@@ -72,8 +74,9 @@ $( document ).ready(function() {
      li.innerHTML = markup;
      $(".cities").append(li);
        }).fail(function(jqXHR) {
-          $("#forecast").html("There was a problem contacting the server: " +
+          $(".msg").html("There was a problem contacting the server: " +
              jqXHR.status + " " + jqXHR.responseText);
        });
+       $(".msg").html("");
     });
 });
