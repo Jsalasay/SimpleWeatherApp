@@ -11,7 +11,7 @@ $( document ).ready(function() {
    //on loadup
    $("#userLocation").click(function(){
       navigator.geolocation.getCurrentPosition(function(position){
-         $(".msg").html("");
+         
          let lat = position.coords.latitude;
          let long = position.coords.longitude;
          
@@ -29,7 +29,7 @@ $( document ).ready(function() {
                     <span>${name}</span>
                     <sup>${sys.country}</sup>
                  </h2>
-                 <div class="city-temp">${Math.round(main.temp)}<sup>°C</sup>
+                 <div class="city-temp">${Math.round(main.temp)}<sup>°F</sup>
                  </div>
                  <figure>
                     <img class="city-icon" src=${icon} alt=${weather[0]["main"]}>
@@ -38,8 +38,10 @@ $( document ).ready(function() {
               `;
            li.innerHTML = markup;
            $(".cities").append(li);
+           $(".msg").html("");
            },
-           error: function(jqXHR){$(".msg").html("There was a problem contacting the server: " + jqXHR.status + " " + jqXHR.responseText);}
+           error: function(jqXHR){$(".msg").html("There was a problem contacting the server: " + jqXHR.status + " " + jqXHR.responseText+
+           "\nplease input a valid city!");}
          });
          
 
@@ -64,7 +66,7 @@ $( document ).ready(function() {
                  <span>${name}</span>
                  <sup>${sys.country}</sup>
               </h2>
-              <div class="city-temp">${Math.round(main.temp)}<sup>°C</sup>
+              <div class="city-temp">${Math.round(main.temp)}<sup>°F</sup>
               </div>
               <figure>
                  <img class="city-icon" src=${icon} alt=${weather[0]["main"]}>
@@ -72,9 +74,11 @@ $( document ).ready(function() {
               </figure>
            `;
         li.innerHTML = markup;
+        $(".msg").html("");
         $(".cities").append(li);
         },
-        error: function(jqXHR){$(".msg").html("There was a problem contacting the server: " + jqXHR.status + " " + jqXHR.responseText);}
+        error: function(jqXHR){$(".msg").html("There was a problem contacting the server: " + jqXHR.status + " " + jqXHR.responseText+
+           "<br>please input a valid city!");}
         });
     });
 });
