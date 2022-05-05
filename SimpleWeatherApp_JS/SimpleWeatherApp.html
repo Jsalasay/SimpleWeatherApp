@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Simple Weather App</title>
+        <link rel="stylesheet" href="WeatherApp.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="WeatherApp.js"></script>
+    </head>
+
+    <body>
+        <section class="top-banner">
+            <div class="container">
+              <h1 class="heading">Simple Weather App</h1>
+              <form>
+                <input id="city" type="text" placeholder="Search for a city" autofocus>
+                <button type="button" id="search">Search</button>
+                <span class="msg"></span>
+              </form>
+            </div>
+          </section>
+
+          <button type="button" id="userLocation">Use current location</button>
+          <section class="ajax-section">
+            <div id="forecast">
+              <ul class="cities">
+                
+              </ul>
+              
+            </div>
+          </section>
+          
+    </body>
+    
+
+</html>
